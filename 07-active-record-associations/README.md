@@ -8,6 +8,19 @@ Active Record Associations
 * Describe the methods that the relationship macros add to a model
 * Practice looking up library documentation for Active Record Migrations, Queries and Association Macros
 
+## Notes
+Player -< Review >- Game
+
+Player has many Reviews
+Player has many Games through Reviews
+
+Review belongs to Player
+Review belongs to Game
+
+Pros: saves a lot of repetitve code, good for lazy programmers, keeps our code DRY, makes it easy to work with SQL
+Cons: there's some setup to be done, it's hard to remember all the convention, writing migrations, managing the attributes
+
+
 ## Outline
 * Review migrations
   * `db:migrate` and `db:rollback`, `db:migrate:status`

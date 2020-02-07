@@ -7,4 +7,5 @@ gem "sqlite3"
 gem "rake"
 gem "pry"
 
-gem "faker", "~> 2.7"
+
+gem "faker", "~> 2.10"
