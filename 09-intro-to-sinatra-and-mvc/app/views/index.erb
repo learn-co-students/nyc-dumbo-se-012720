@@ -1,0 +1,7 @@
+<h1> Students </h1>
+<%= @tagline %>
+<ul>
+   <% @students.each do |student| %>
+   <li> <%= student.name_and_hometown %> </li>
+    <% end %>
+</ul>
