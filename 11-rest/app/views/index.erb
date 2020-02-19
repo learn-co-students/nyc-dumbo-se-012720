@@ -1,0 +1,16 @@
+<h1>Vehicles Index</h1>
+<ul>
+  <% @vehicles.each do |vehicle| %>
+    <li>
+      <a href="/vehicles/<%= vehicle.id %>">
+        <%= vehicle.color %>
+        <%= vehicle.make %>
+        <%= vehicle.model %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/vehicles/new">
+  New Vehicle
+</a>
