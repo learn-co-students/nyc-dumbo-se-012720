@@ -7,3 +7,10 @@
   <a href="/vehicles/<%= @vehicle.id %>/edit">
   Edit Vehicle
 </a>
+
+
+<form action="/vehicles/<%= @vehicle.id %>" method="POST" >
+  <input type="hidden" name="_method" value="DELETE"/>
+  <input type="submit" value="Delete!" />
+</form>
+

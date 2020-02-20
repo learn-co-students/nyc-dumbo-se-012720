@@ -1,0 +1,20 @@
+<form method="POST" action="/vehicles/<%= @vehicle.id %>">
+  <input type="hidden" value="PATCH" name="_method" />
+  <ul>
+    <li>
+      <label for="vehicle-make">Make</label>
+      <input id="vehicle-make" type="text" name="make" value="<%= @vehicle.make %>" />
+    </li>
+    <li>
+      <label for="vehicle-model">Model</label>
+      <input id="vehicle-model" type="text" name="model" value="<%= @vehicle.model %>" />
+    </li>
+    <li>
+      <label for="vehicle-color">Color</label>
+      <input id="vehicle-color" type="text" name="color" value="<%= @vehicle.color %>" />
+    </li>
+    <li>
+      <input type="submit" />
+    </li>
+  </ul>
+</form>
