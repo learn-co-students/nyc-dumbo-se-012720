@@ -1,0 +1,18 @@
+<h1> Passenger show page </h1>
+<p> <%= @passenger.name %> </p>
+
+<h3>Flights that this passenger has been on:</h3>
+
+
+<ul>
+
+<% @passenger.boarding_passes.each do |boardingPass|  %>
+
+  <li>
+    <%= boardingPass.seat %>
+    Destination: <%= boardingPass.flight.destination %>
+    Origin: <%= boardingPass.flight.origin %>
+
+  </li>
+<% end %>
+</ul>
