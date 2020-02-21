@@ -1,0 +1,20 @@
+class RestaurantsController < ApplicationController
+
+
+    def index
+        @restaurants = Restaurant.all
+        # render :index
+    end
+
+    def show
+        @restaurant = Restaurant.find(params[:id])
+    end
+
+
+
+    # get '/index' do
+    #     erb :index
+    # end
+
+
+end
