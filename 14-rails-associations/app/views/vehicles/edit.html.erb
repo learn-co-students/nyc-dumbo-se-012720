@@ -1,0 +1,51 @@
+<h1>
+    Editing 
+    <%= @vehicle.color %>
+    <%= @vehicle.make %>
+    <%= @vehicle.model %>
+</h1>
+
+<%= render "form" %>
+
+<!--
+<%= form_tag vehicle_path(@vehicle), method: :patch do %>
+    <ul>
+        <li>
+            <%= label_tag :make %>
+            <%= text_field_tag :make, @vehicle.make %>
+        </li>
+        <li>
+            <%= label_tag :model %>
+            <%= text_field_tag :model, @vehicle.model  %>
+        </li>
+        <li>
+            <%= label_tag :color %>
+            <%= text_field_tag :color, @vehicle.color  %>
+        </li>
+    </ul>
+    <%= submit_tag "Update the thign" %>
+<% end %>
+-->
+<!-- >
+<form action="/vehicles/<%= @vehicle.id %>" method="POST">
+    <input type="hidden" name="_method" value="PATCH">
+    <ul>
+        <li>
+            <label for="make">Make</label>
+            <input id="make" type="text" name="make" value="<%= @vehicle.make %>">
+        </li>
+        <li>
+            <label for="model">Model</label>
+            <input id="model" type="text" name="model" value="<%= @vehicle.model %>">
+        </li>
+        <li>
+            <label for="color">Color</label>
+            <input id="color" type="text" name="color" value="<%= @vehicle.color %>">
+        </li>
+        <li>
+            <input type="submit" />
+        </li>
+    </ul>
+</form>
+
+-->

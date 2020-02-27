@@ -1,0 +1,23 @@
+<%= form_for @vehicle do |f| %>
+    <ul>
+        <li>
+            <%= f.label :make %>
+            <%= f.text_field :make %>
+        </li>
+        <li>
+            <%= f.label :model %>
+            <%= f.text_field :model %>
+        </li>
+        <li>
+            <%= f.label :color %>
+            <%= f.collection_select :color, @colors, :upcase, :downcase %>
+            <%# f.text_field :color %>
+<!--             <select name="vehicle[color]">
+                <option value="Red">🔴</option>
+                <option value="Blue">💙</option>
+                <option value="Carbon Black">🏴</option>
+            </select> -->
+        </li>
+    </ul>
+    <%= f.submit %>
+<% end %>

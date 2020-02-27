@@ -1,0 +1,30 @@
+<h1>
+    <%= @vehicle.color %>
+    <%= @vehicle.make %>
+    <%= @vehicle.model %>
+</h1>
+
+
+<ol>
+  <% @vehicle.drivers.each do |driver| %>
+    <li>
+      <%= link_to driver.name, driver %>
+    </li>
+  <% end %>
+</ol>
+ 
+<%= form_for @vehicle_driver do |f| %> 
+  <ul>
+    <li>
+      <%= f.label :driver_id %>
+      <%= f.collection_select :driver_id, @drivers, :id, :name %>
+    </li>
+    <li>
+      <%= f.hidden_field :vehicle_id, value: @vehicle.id %>
+    </li>
+  </ul>
+  <%= f.submit %>
+<% end %>k
+
+<%= link_to "Edit this car!", edit_vehicle_path(@vehicle) %>
+

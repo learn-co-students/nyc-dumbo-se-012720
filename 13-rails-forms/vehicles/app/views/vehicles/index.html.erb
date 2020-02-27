@@ -1,0 +1,13 @@
+<h1>Look at all of these vehicles:</h1>
+
+
+<ol>
+  
+  <% @vehicles.each do |vehicle| %>
+    <li>
+      <%= vehicle.color %>
+      <%= vehicle.make %>
+      <%= vehicle.model %>
+    </li>
+  <% end %> 
+</ol>

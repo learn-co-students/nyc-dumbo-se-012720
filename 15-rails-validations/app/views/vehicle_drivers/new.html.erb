@@ -1,0 +1,15 @@
+<%= form_for @vehicle_driver do |f| %> 
+  <ul>
+    <li>
+      <%= f.label :driver_id %>
+      <%# f.number_field :driver_id %>
+      <%= f.collection_select :driver_id, @drivers, :id, :name %>
+    </li>
+    <li>
+      <%= f.label :vehicle_id %>
+      <%# f.number_field :vehicle_id %>
+      <%= f.collection_select :vehicle_id, @vehicles, :id, :description %>
+    </li>
+  </ul>
+  <%= f.submit %>
+<% end %>
