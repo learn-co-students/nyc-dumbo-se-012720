@@ -1,8 +1,14 @@
-def say_hi(name)
-  puts "hi " + name
-  10
+arr = [1,2,3]
+
+arr.each do |num|
+  puts num + 2
 end
 
-a = say_hi("Randy")
+# hi = "Nicky"
 
-puts a # 10
+# def say_hi
+#   puts "hi " + hi
+# end
+
+# say_hi
+

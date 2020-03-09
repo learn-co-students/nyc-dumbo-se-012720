@@ -1,10 +1,10 @@
 # Scope and closures
 
-## SWBATs
-- [ ] Write functions in the correct syntax
-- [ ] Explain the differences and similarities between methods in Ruby and functions in JS
-- [ ] Distinguish between a function definition and its invocation
-- [ ] Explain difference between `var`, `let`, and `const`, and explain hoisting
+## Student Will Be Able To s
+- [x] Write functions in the correct syntax
+- [x] Explain the differences and similarities between methods in Ruby and functions in JS
+- [x] Distinguish between a function definition and its invocation
+- [x] Explain difference between `var`, `let`, and `const`, and explain hoisting
 - [ ] Explain what it means for functions to be first-class citizens
 
 ### First Class Functions and Closures
