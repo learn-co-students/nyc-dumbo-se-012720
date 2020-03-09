@@ -2,7 +2,7 @@
 
 ## Lecture Expectations
 - Participation
-  - Don't wait for the answer
+  - Don't wait for someone else to give the answer
     - Make a hypothesis (even if you don't plan on sharing it)
   - Don't be afraid to give the wrong answer
 - Labs/Pacing
@@ -12,9 +12,7 @@
 - Should I code along?
 
 ## Mod 3 Overview
-- 2 tracks
-
-- Week 1: JS Fundamentals and 'three pillars' of JS
+- Week 1: JS Fundamentals and 'three pillars' of JS (DOM Manipulation, Event Handling, Network Requests)
 - Week 2: Rails API and OOJS
 - Week 3: Project Week and Modern JS
 
@@ -67,6 +65,11 @@
   * Each browser has its own [JavaScript engine](http://en.wikipedia.org/wiki/JavaScript_engine) or implementation
   * The [Document Object Model](https://en.wikipedia.org/wiki/Document_Object_Model) is the interface between the loaded HTML and the JavaScript code we write (more on this later in the mod)
   * Most browsers are converging on agreeing on web standards, but browsers need ability to add proprietary features to CSS, JS, and DOM (I'm looking at you Internet Explorer 😡)
+
+### Notes
+
+
+
 
 ### JavaScript Data Types Overview
 There are seven primitive data types in JavaScript:

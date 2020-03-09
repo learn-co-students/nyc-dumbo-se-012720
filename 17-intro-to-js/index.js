@@ -2,7 +2,7 @@
 console.log('HELLO WORLD')
 console.log('%cHELLO WORLD', 'color: red')
 
-// debugger
+debugger
 
 /**** data types ****/
 
@@ -13,3 +13,13 @@ console.log('%cHELLO WORLD', 'color: red')
 /**** arrays and objects ****/
 
 /**** function definition vs invocation ****/
+function sayHi(name) {
+  // debugger
+  console.log("hi " + name)
+  return 10
+}
+
+// let a = sayHi()
+let b = sayHi
+
+// console.log(a) // 10

@@ -1,9 +1,11 @@
 # how would we write this in Javascript?
-def say_hi
-  puts "hi"
+def say_hi(name)
+  puts "hi " + name
   10
 end
 
-a = say_hi
+say_hi()
 
-puts a
+# a = say_hi
+
+# puts a
