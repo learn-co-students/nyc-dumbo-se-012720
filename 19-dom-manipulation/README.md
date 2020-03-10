@@ -9,7 +9,7 @@
 
 ### Three Pillars of Javascript
 
-- Manipulating the DOM
+- Manipulating the DOM < ===
 - Handling Events
 - Communicating with the Server
 
@@ -40,7 +40,7 @@
 
 ```html
 <body>
-  <div >
+  <div>
     <h1>Welcome to the DOM Dominion</h1>
     <p>A magical land of trees and <em>mystical</em> properties</p>
     <ul>
