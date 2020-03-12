@@ -1,7 +1,7 @@
 # Event Delegation
 
 ## SWBATs
-- [x] *Bonus* Use arrow function syntax
+- [ ] *Bonus* Use arrow function syntax
 - [ ] Identify strategies for handling events
 - [ ] Explain event propagation and identify how it can be used
 - [ ] Use conditional logic in combination with event propagation to delegate events

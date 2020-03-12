@@ -7,6 +7,25 @@ const animalList = document.querySelector("#animal-list")
 lightSwitch.addEventListener("click", handleLightSwitchClick)
 animalForm.addEventListener("submit", handleFormSubmit)
 
+// Event Delegation
+// 1. find the closest stable parent of elements we care about
+animalList.addEventListener("click", e => {
+  // 2. identify if the specific element we care about was clicked (some conditional logic)
+  // (e.target.matches(".delete"))
+  if (e.target.dataset.action === "freeToTheWild") {
+    const card = e.target.closest(".card")
+    card.remove()
+  }
+
+  if (e.target.dataset.action === "donate") {
+    // find the place place on the page we're updating
+    const card = e.target.closest(".card")
+    const donationCount = card.querySelector(".donation-count")
+    // update the DOM
+    donationCount.textContent = parseInt(donationCount.textContent) + 10
+  }
+})
+
 /**************** Event Handlers ****************/
 function handleLightSwitchClick() {
   document.body.classList.toggle("dark-mode")
@@ -51,6 +70,23 @@ function renderOneAnimal(animalObj) {
     </button>
   `
 
+  // Nested Event Listeners strategy
+  // const deleteBtn = outerLi.querySelector(".delete")
+  // deleteBtn.addEventListener('click', e => {
+  //   outerLi.remove()
+  // })
+
+  // const donateBtn = outerLi.querySelector(".donate")
+  // donateBtn.addEventListener('click', e => {
+  //   // find the place place on the page we're updating
+  //   const donationCount = outerLi.querySelector(".donation-count")
+  //   // update the data
+  //   animalObj.donations = animalObj.donations + 10
+  //   // update the DOM
+  //   // donationCount.textContent = parseInt(donationCount.textContent) + 10
+  //   donationCount.textContent = animalObj.donations
+  // })
+
   animalList.append(outerLi)
 }
 
@@ -59,4 +95,25 @@ function renderAllAnimals(animals) {
 }
 
 /**************** Initial Render ****************/
+// delete button
+// const allDeleteButtons = document.querySelectorAll(".delete")
+// allDeleteButtons.forEach(button => {
+//   button.addEventListener('click', e => {
+//     const card = e.target.closest(".card")
+//     card.remove()
+//   })
+// })
+
 renderAllAnimals(animalData)
+
+// document.body.addEventListener('click', e => {
+//   console.log("BODY", e.target)
+// })
+
+// document.querySelector(".card").addEventListener('click', e => {
+//   console.log("CARD", e.target)
+// })
+
+// document.querySelector(".donate").addEventListener('click', e => {
+//   console.log("BUTTON", e.target)
+// })
