@@ -9,13 +9,42 @@ animalForm.addEventListener("submit", handleFormSubmit)
 animalList.addEventListener("click", e => {
   if (e.target.dataset.action === "freeToTheWild") {
     const cardLi = e.target.closest(".card")
-    cardLi.remove()
+    const animalId = cardLi.dataset.id
+
+    // optimistic rendering => before the response comes back, we showing the user the effect of removing
+    // cardLi.remove()
+
+    // DELETE /animals/:id
+    fetch(`http://localhost:3000/animals/${animalId}`, {
+      method: "DELETE"
+    })
+      .then(r => {
+        console.log(r)
+        return r.json()
+      })
+      .then(() => {
+        // pessimistic rendering => wait for the response before updating the DOM
+        cardLi.remove()
+      })
   }
 
   if (e.target.dataset.action === "donate") {
     const cardLi = e.target.closest(".card")
     const donationCount = cardLi.querySelector(".donation-count")
     const newDonations = parseInt(donationCount.textContent) + 10
+    const animalId = cardLi.dataset.id
+
+    // PATCH /animals/:id
+    // body: { donations: newDonations }
+    fetch(`http://localhost:3000/animals/${animalId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json", // how we are sending the data in the body
+        "Accept": "application/json" // how we want the response formatted
+      },
+      body: JSON.stringify({ donations: newDonations })
+    })
+
     donationCount.textContent = newDonations
   }
 })
@@ -37,8 +66,26 @@ function handleFormSubmit(event) {
     donations: 0
   }
 
-  // slap on the DOM
-  renderOneAnimal(newAnimal)
+  // make a fetch request to save the animal on the sever
+
+  // POST /animals
+  fetch("http://localhost:3000/animals", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json", // how we are sending the data in the body
+      "Accept": "application/json" // how we want the response formatted
+    },
+    body: JSON.stringify(newAnimal)
+  })
+    .then(response => response.json())
+    .then(actualNewAnimal => {
+      // pessimistic rendering => we are waiting for the response
+      // before the sees the new information
+      console.log(actualNewAnimal)
+      // and then => slap on the DOM
+      renderOneAnimal(actualNewAnimal)
+    })
+
 }
 
 /**************** Render Helpers ****************/
@@ -72,4 +119,13 @@ function renderAllAnimals(animals) {
 }
 
 /**************** Initial Render ****************/
-renderAllAnimals(animalData)
+fetch("http://localhost:3000/animals")
+  .then(response => response.json())
+  .then(actualAnimalData => {
+    // in here, we can access the data
+    renderAllAnimals(actualAnimalData)
+  })
+
+// When X event happens 
+// Do Y fetch request 
+// And slap Z on/off the DOM 

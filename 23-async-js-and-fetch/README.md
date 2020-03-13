@@ -9,9 +9,9 @@
 - [ ] **BONUS** Use `catch` to handle errors in promises
 
 ## Notes
-- `json-server`:
 - AJAX:
 - JSON:
+- `json-server`:
 
 ## What Does Synchronous/ Asynchronous Mean 🕰
 
@@ -28,7 +28,7 @@ function sleep(time){
 }
 
 console.log('Starting the sleep function')
-sleep(10)
+sleep(3000)
 console.log('Wow that sleep function took forever to run. 1 Star 🌟')
 ```
 
