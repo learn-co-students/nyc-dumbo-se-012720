@@ -64,7 +64,7 @@ function handleFormSubmit(event) {
     name: event.target["name"].value,
     species_name: event.target["species_name"].value,
     image_url: event.target["image_url"].value,
-    description: event.target["diet"].value,
+    diet: event.target["diet"].value,
     description: event.target["description"].value,
     donations: 0
   }
@@ -79,7 +79,13 @@ function handleFormSubmit(event) {
     },
     body: JSON.stringify(newAnimal)
   })
-    .then(response => response.json())
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } else {
+        throw Error("Bad request")
+      }
+    })
     .then(actualNewAnimal => {
       // pessimistic rendering => 
       // we are waiting for the response
@@ -88,6 +94,7 @@ function handleFormSubmit(event) {
       // and then => slap on the DOM
       renderOneAnimal(actualNewAnimal)
     })
+    .catch(error => alert(error))
 
 }
 

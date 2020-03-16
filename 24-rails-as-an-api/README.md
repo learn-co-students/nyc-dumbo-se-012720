@@ -1,4 +1,4 @@
-# Rail as an API
+# Rails as an API
 
 ## SWBATs
 - [ ] Generate a Rails API
@@ -70,3 +70,5 @@ Read the [getting started documentation](https://github.com/rails-api/active_mod
   This may come as a shock but the `config.api_only = true` option found in `config/application.rb` tells our app that it is going to be an **API only**. In other words, our API **will not generate any HTML** and instead will return JSON. The frontend is responsible for taking that JSON, formatting the data, and generating HTML to show to the user. Read [this](https://www.w3schools.com/js/js_json_intro.asp) if you want to review what JSON is and why we use it.
 
   For now, we will leave the origins open. Later on, we can change this to only allow requests from the address of the frontend repo––localhost:8000 or `www.myapp.com` for example.
+
+* One note about `postgresql` in Rails: before you run `rails db:migrate` the first time, you'll need to ru `rails db:create`. This tells Postgres to create the actual database(s) for your application.
