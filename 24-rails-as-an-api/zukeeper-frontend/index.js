@@ -108,6 +108,10 @@ function renderOneAnimal(animalObj) {
         $<span class="donation-count">${animalObj.donations}</span> Donated
       </div>
       <div class="description">${animalObj.description}</div>
+      <div class="tags">
+        <span>${animalObj.species_name}</span>
+        <span class="${animalObj.diet}">${animalObj.diet}</span>
+      </div>
     </div>
     <button data-action="donate" class="donate button">
       Donate $10
