@@ -2,8 +2,8 @@ Execution Context
 ================
 
 ## SWBATs
-- [ ] Identify the execution context of a function
-- [ ] Identify some use-cases for `this`
+- [x] Identify the execution context of a function
+- [x] Identify some use-cases for `this`
 - [ ] Compare `self` to `this` and understand their differences
 - [ ] Use `bind`, `call`, and `apply` to control execution context
 - [ ] Use arrow functions to bind execution context
@@ -25,6 +25,33 @@ Functions can change their behavior based on the object that is calling the func
 
 
 ### Review of `self` in Ruby
+
+```rb
+class Dog
+  attr_accessor :first_name, :fav_snacks
+
+  def initialize(first_name, fav_sacks)
+    @first_name = first_name
+    @fav_snacks = fav_snacks
+  end
+
+  def speak
+    # self in an instance method is the instance
+    "woof my name is #{self.first_name}"
+  end
+
+  def self.all
+    # self in a class method will be the class
+    self 
+  end
+
+end
+
+dog = Dog.new("fezzik", ["peanut butter", "soccer balls"])
+```
+
+
+
 
 - There are _some_ similarities between `this` in JavaScript and `self` in Ruby. Looking at the similarities will get us _closer_ to understanding JavaScript's `this`. **Please do not think of them as being the same thing, however**.
 
