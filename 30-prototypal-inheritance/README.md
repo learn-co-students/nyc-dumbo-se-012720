@@ -9,6 +9,37 @@
 
 ### Notes
 
+```rb
+
+class Animal
+  attr_reader :first_name
+
+  @@all = []
+
+  def initialize(first_name)
+    @first_name = first_name
+    @@all << self
+  end
+
+  # instance method
+  def speak
+    puts "hi my name is #{self.first_name}"
+  end
+
+  # class method 
+  def self.find_by_name(name)
+    self.all.find do |animal|
+      animal.name == name
+    end
+  end
+
+  def self.all
+    @@all
+  end
+end
+
+```
+
 
 
 ### Object Creation in JavaScript
