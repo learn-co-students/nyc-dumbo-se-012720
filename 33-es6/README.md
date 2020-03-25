@@ -39,8 +39,12 @@ class Animal {
     this.imageUrl = imageUrl
   }
 }
+new Animal({ id: 1, name: "Koala", donations: 1000, image_url: "some image"})
 
 // nice for working with big objects, like `event`
+document.body.addEventListener("mousemove", (e) => {
+  console.log(e.screenX, e.screenY)
+})
 document.body.addEventListener("mousemove", ({ screenX, screenY }) => {
   console.log(screenX, screenY)
 })
