@@ -1,0 +1,65 @@
+/*.list-image { 
+  border: 17px solid #fff5;
+  /*margin: 160px;*/
+  /*transform: rotate(45deg);*/
+/*}
+#scottie {
+  border-color: red;
+}
+.list-image#scottie {
+  border-style: dotted;
+}
+body {
+  background-color: black;
+  color: white;
+}*/
+.flex-container {
+  perspective: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style-type: none;
+
+}
+
+.flex-container li {
+  height: 350px;
+  width: 350px;
+  margin: 10px;
+  padding: 20px;
+  background: pink;
+  box-sizing: border-box;
+  transition: transform 1s, opacity 1s;
+  transform: rotate(0deg);
+  animation: throb 10s infinite alternate;
+}
+
+@keyframes throb {
+  0% {
+    opacity: 0.25
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}
+
+
+.flex-container li:hover {
+  transition-duration: .5s;
+  transform: rotate(360deg) scale(2);
+  z-index: 20;
+  opacity: 0.8;
+  /*width: 500px;*/
+  /*background: green;*/
+}
+.flex-container li:active {
+  background: blue;
+}
+.flex-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
