@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Favorite colors</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <% if @logged_in %>
+        Hello, <%= @logged_in_user.username.titleize %>, you're logged in!!
+        <%= button_to "Log out", log_out_path, method: :delete %>
+        <%= link_to "List votes", votes_path %>
+        You have <%= @logged_in_user.remaining_votes %> votes remaining.
+      <% else %>
+        <%= link_to "Log in", new_login_path %>
+        <%= link_to "Sign up", new_user_path %>
+      <% end %>
+
+      <% if @notification %> 
+        <p class="message">
+          <%= @notification %>
+        </p>
+      <% end %>
+
+      <% if @errors && @errors.any? %>
+      <ul class="errors">
+        <% @errors.each do |error| %>
+        <li>
+          <%= error %>
+        </li>
+        <% end %>
+      </ul>
+      <% end %>
+
+    </header>
+    <%= yield %>
+  </body>
+</html>

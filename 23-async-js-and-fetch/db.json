@@ -1,0 +1,32 @@
+{
+  "animals": [
+    {
+      "id": 1,
+      "name": "Red Panda",
+      "imageUrl": "https://i1.wp.com/www.redpandanetwork.org/wp-content/uploads/2018/10/Photo-1-for-Give-page.png?fit=584%2C584&ssl=1",
+      "description": "not actually a panda",
+      "donations": 40
+    },
+    {
+      "id": 5,
+      "name": "Wombat",
+      "imageUrl": "https://live.staticflickr.com/4158/33752020123_eab52e719d_b.jpg",
+      "description": "They have cube-shaped poop. Wombat poop is square. They mark their territories by defecating, and it's thought that the shape of their poop keeps it from rolling away.",
+      "donations": 0
+    },
+    {
+      "id": 6,
+      "name": "Chinchilla",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51c-yODr17L._SX425_.jpg",
+      "description": "Has to take dust baths to prevent mold!",
+      "donations": 0
+    },
+    {
+      "name": "Long Whiskered Owlet",
+      "imageUrl": "https://cdn.birdwatchingdaily.com/2013/10/Long-whiskered-Owlet.jpg",
+      "description": "Only lives in one small area in Peru!",
+      "donations": 0,
+      "id": 7
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<ul>
+<% @votes.each do |vote| %>
+  <li>
+    <%= vote.user.username %> voted for #<%= vote.color.hex %>
+    <% if @logged_in_user_id == vote.user_id %>
+      <%= button_to "delete vote", vote_path(vote), method: :delete %>
+    <% end %>
+  </li>
+<% end %>
+</ul>
