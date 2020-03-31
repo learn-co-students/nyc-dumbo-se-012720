@@ -1,18 +1,34 @@
 import React from 'react';
 import './App.css';
 import BirdCharacterContainer from './BirdCharacterContainer'
+import arrayOfBirds from './data'
 
-function App(props) {
-  return (
 
-    <div className="App">
+class App extends React.Component{
 
-      <h1>Welcome to the Birdhouse!!!</h1>
-      <BirdCharacterContainer title="Bawk bawk"/>
+  // constructor(props){
+  //   super(props)
+  //   this.state={
+  //     birds: "🍕"
+  //   }
+  // }
 
-    </div>
+  state = {
+    birds: arrayOfBirds
+  }
 
-  );
+  render(){
+    return (
+      <div className="App">
+        <h1>Welcome to the Birdhouse!!!</h1>
+        <BirdCharacterContainer
+          title="Bawk bawk"
+          birds={this.state.birds}
+        />
+      </div>
+    );
+  }
+
 }
 
 export default App;
