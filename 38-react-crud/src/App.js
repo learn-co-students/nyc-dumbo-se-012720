@@ -14,9 +14,74 @@ class App extends React.Component{
 
 
   addOneCharacter = (theNewCharacterPOJOIwantToAdd) => {
-    console.log(this.state.birds);
-    console.log(theNewCharacterPOJOIwantToAdd);
+
+    let newCharacter = {...theNewCharacterPOJOIwantToAdd, watched: 0}
+    let theNewCopyOfBirdsArray = [...this.state.birds, newCharacter]
+
+    this.setState({
+      birds: theNewCopyOfBirdsArray
+    })
   }
+
+
+
+
+
+  deleteACharacter = (characterName) => {
+    let filteredArray = this.state.birds.filter((birdPOJO) => {
+      return birdPOJO.name !== characterName
+    })
+
+    this.setState({
+      birds: filteredArray
+    })
+
+  }
+
+
+
+
+
+  updateACharacter = (characterName, numberToIncreaseLikes) => {
+
+    let modifiedArray = this.state.birds.map((birdPOJO) => {
+      if (birdPOJO.name === characterName) {
+        // MODIFY KEY VALUE PAIRS OF THAT OBJECT
+        let copiedObject = {
+          ...birdPOJO,
+          watched: birdPOJO.watched + numberToIncreaseLikes
+        }
+        return copiedObject
+      } else {
+        // KEEP IT THE SAME
+        return birdPOJO
+      }
+    })
+
+
+    // let modifiedArray = this.state.birds.map((birdPOJO) => {
+    //   if (birdPOJO.name === characterName) {
+    //        birdPOJO.watched += numberToIncreaseLikes
+    //    }
+    //     return birdPOJO
+    //   }
+    // })
+
+
+    this.setState({
+      birds: modifiedArray
+    })
+
+  }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -25,7 +90,7 @@ class App extends React.Component{
     return (
       <div className="App">
         <h1>Welcome to the Birdhouse!!!</h1>
-        
+
         <NewBirdForm
           addOneCharacter={this.addOneCharacter}
         />
@@ -33,6 +98,9 @@ class App extends React.Component{
         <BirdCharacterContainer
           title="Bawk bawk"
           birds={this.state.birds}
+          deleteACharacter={this.deleteACharacter}
+          updateACharacter={this.updateACharacter}
+
         />
 
       </div>
