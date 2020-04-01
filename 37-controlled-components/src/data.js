@@ -12,7 +12,7 @@ let arrayOfBirds = [
   {
     name: "Bird Person",
     show: "Rick and Morty",
-    watched: 257
+    watched: 3000
   },
   {
     name: "The Giant Fighting Chicken",
