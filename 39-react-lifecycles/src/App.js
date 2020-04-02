@@ -2,15 +2,48 @@ import React from 'react';
 import './App.css';
 import BirdCharacterContainer from './BirdCharacterContainer'
 import NewBirdForm from './NewBirdForm'
-
-import arrayOfBirds from './data'
-
+import SearchInput from './SearchInput'
 
 class App extends React.Component{
 
   state = {
-    birds: arrayOfBirds
+    birds: [],
+    searchTerm: "bird"
   }
+
+  componentDidMount(){
+    fetch("http://localhost:4000/birds")
+      .then(r => r.json())
+      .then((arrayOfBirds) => {
+
+        this.setState({
+          birds: arrayOfBirds
+        })
+
+      })
+  }
+
+
+  changeSearchTerm = (newTerm) => {
+    this.setState({
+      searchTerm: newTerm
+    })
+  }
+
+
+  functionThatReturnsAnArray = () => {
+
+    let filteredVersionOfArray = this.state.birds.filter((birdPOJO) => {
+      return birdPOJO.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+        ||
+        birdPOJO.show.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    })
+
+    return filteredVersionOfArray
+  }
+
+
+
 
 
   addOneCharacter = (theNewCharacterPOJOIwantToAdd) => {
@@ -61,13 +94,18 @@ class App extends React.Component{
       <div className="App">
         <h1>Welcome to the Birdhouse!!!</h1>
 
+        <SearchInput
+          searchTerm={this.state.searchTerm}
+          changeSearchTerm={this.changeSearchTerm}
+        />
+
         <NewBirdForm
           addOneCharacter={this.addOneCharacter}
         />
 
         <BirdCharacterContainer
           title="Bawk bawk"
-          birds={this.state.birds}
+          birds={this.functionThatReturnsAnArray()}
           deleteACharacter={this.deleteACharacter}
           updateACharacter={this.updateACharacter}
 

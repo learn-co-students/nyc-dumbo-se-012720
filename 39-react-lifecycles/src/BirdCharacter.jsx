@@ -2,20 +2,55 @@ import React from 'react'
 
 class BirdCharacter extends React.Component{
 
+  state = {
+    status: "liked"
+  }
 
-  handleDelete = (e) => {
+
+  componentDidUpdate(prevVersionOfProps, prevVersionOfState) {
+    // current props and state
+    // this.props && this.state
+
+
+    // past props and state
+    // prevProps && prevState (first argument && second argument)
+
+    if (prevVersionOfProps.bird.watched > this.props.bird.watched) {
+      this.setState({
+        status: "disliked"
+      })
+    }
+
+    if (prevVersionOfProps.bird.watched < this.props.bird.watched) {
+      this.setState({
+        status: "liked"
+      })
+    }
+
+  }
+
+
+  componentWillUnmount() {
+    console.log(this.props.bird.name, "SAYS GOODBYE");
+  }
+
+
+  handleDelete = (evt) => {
     this.props.deleteACharacter(this.props.bird.name)
   }
 
   handleWatch = (evt) => {
-    this.props.updateACharacter(this.props.bird.name, 7)
+    let randomNumber = Math.random() < 0.5 ? -20 : 45
+
+    this.props.updateACharacter(this.props.bird.name, randomNumber)
   }
 
 
   render(){
     let {name, show, watched} = this.props.bird
+    let {status} = this.state
     return (
-      <div className="container">
+      <div className={`container ${status}`}>
         <img src="https://i2.wp.com/files.123freevectors.com/wp-content/uploads/new/animals/241-vector-cute-cartoon-bird-image.png?w=800&q=95" alt="bird" />
         <button className="delButton" onClick={ this.handleDelete }>
           X
