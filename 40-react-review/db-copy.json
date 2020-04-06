@@ -1,0 +1,84 @@
+{
+  "planeteers":[
+    {
+      "id": 1,
+      "name": "Xiuhtezcatl Martinez",
+      "fromUSA": true,
+      "born": 2000,
+      "bio": "While Xiuhtezcatl started speaking about the environment at just age 6, he is now a 19-year-old indigenous activist, musician, and the youth director of Earth Guardians, an organization that trains youth across the world to use civic engagement and the arts to help solve environmental issues. As a hip-hop artist, Xiuhtezcatl also often uses music to convey powerful environmental messages. He is also not afraid to confront the government head-on, as he was one of the 21 plaintiffs that sued the federal government for their lack of action on climate change.",
+      "quote": "My father taught me to see the magic in everything. Growing up, magic was in the sunrise and the rainfall. In every expression of life, no matter how small. I think that that was one of the most valuable wisdom that shaped who I was as a young boy. It gave me the perspective to see what was behind the dysfunction of our society, of our broken world, our dying ecosystems and corrupt leaders.",
+      "pictureUrl": "https://160g7a3snajg2i1r662yjd5r-wpengine.netdna-ssl.com/wp-content/uploads/2019/12/XMartinez.gif",
+      "twitter": "@xiuhtezcatl"
+    },
+    {
+      "id": 2,
+      "name": "Vic Barrett",
+      "fromUSA": true,
+      "born": 2000,
+      "bio": "Vic is from low-lying land in New York and has felt firsthand climate impacts in the form of Hurricane Sandy. Vic is a Fellow with the Alliance for Climate Education, spoke at the COP21 U.N. Conference on Climate Change and spoke at the U.N. headquarters in New York City. After marching in solidarity with more than 400,000 people at the People’s Climate March in New York City, he organized his peers in local frontline climate campaigns. Vic is now an undergraduate student at UW-Madison and is also among 21 youth activists who are actively suing the government to take action on climate change.",
+      "quote": "The journey of looking at myself and my identity… made it clear to me that something had to be done. How could you not when people are dying?",
+      "pictureUrl": "https://160g7a3snajg2i1r662yjd5r-wpengine.netdna-ssl.com/wp-content/uploads/2019/12/vic.jpg",
+      "twitter": "@vict_barrett"
+    },
+    {
+      "id": 3,
+      "name": "Xiye Bastida",
+      "fromUSA": true,
+      "born": 2002,
+      "bio": "Xiye Bastida is a teenage climate activist currently based in New York City and one of the lead organizers of the Fridays For Future youth climate strike movement. Bastida was born and raised in Mexico as part of the Otomi-Toltec indigenous peoples. She sits on the administration committee of the Peoples Climate Movement, where she brings the voice of youth to existing grassroots and climate organizations. She received the “Spirit of the UN” award in 2018.",
+      "quote": "We are on Earth to take care of life. We are on Earth to take care of each other.",
+      "pictureUrl": "https://160g7a3snajg2i1r662yjd5r-wpengine.netdna-ssl.com/wp-content/uploads/2019/12/xiya.jpg",
+      "twitter": "@xiyebastida"
+    },
+    {
+      "id": 4,
+      "name": "Isra Hirsi",
+      "fromUSA": true,
+      "born": 2003,
+      "bio": "Isra Hirsi is the 16-year old co-founder and co-executive of the US Youth Climate Strike, the organization that leads the student climate strikes. As the co-founder of the U.S. Youth Climate Strike and the daughter of Congresswoman Ilhan Omar, Isra Hirsi is grappling with harassment, safety threats, tokenization, and privilege on a national scale years before she's even allowed to vote. Inspired by the Flint water crisis, Isra fights for climate justice. As a black Muslim woman, she emphasizes the importance of intersectionality in the movement for climate justice. She is also a part of MN Can’t Wait, a youth coalition of organizations calling upon the Minnesota government to take action.",
+      "quote": "It is my future, it is the younger ones’ future, and it’s less the older ones’ future.",
+      "pictureUrl": "https://160g7a3snajg2i1r662yjd5r-wpengine.netdna-ssl.com/wp-content/uploads/2019/12/isra.gif",
+      "twitter": "@israhirsi"
+    },
+    {
+      "id": 5,
+      "name": "Lilly Platt",
+      "fromUSA": false,
+      "born": 2010,
+      "bio": "Just at 9 years old, Lilly Platt, started going on a war to end plastic pollution. When Lilly first moved to Holland her grandfather began teaching her to speak Dutch, and to help her learn numbers, they collected pieces of plastic trash and counted them. She no longer needs the practice but she’s still picking up plastic. Today, Lilly is a Youth Ambassador for the Plastic Pollution Coalition and a Child Ambassador for HOW Global and World Cleanup Day.",
+      "quote": "You don’t have to be a grown up to do something. Children are allowed to help the environment. If they don’t, they won’t have a future. They won’t have anything to go to school for.",
+      "pictureUrl": "https://160g7a3snajg2i1r662yjd5r-wpengine.netdna-ssl.com/wp-content/uploads/2019/12/lilly.gif",
+      "twitter": "@lillyspickup"
+    },
+    {
+      "id": 6,
+      "name": "Leah Namugerwa",
+      "fromUSA": false,
+      "born": 2005,
+      "bio": "As a 14-year-old member of Fridays for Future Uganda, Leah Namugerwa strikes every Friday for climate justice. Leah was inspired by Greta Thunberg but was truly moved to act after seeing the famine caused by drought and landslides from climate change. Despite the Ugandan government’s harsh response to strikers, Leah continues to fight for change. Currently, she is demanding a Ugandan plastic bag ban.",
+      "quote": "Most people do not care what they do to the environment. I noticed adults were not willing to offer leadership and I chose to volunteer myself. Environmental injustice is injustice to me.",
+      "pictureUrl": "https://160g7a3snajg2i1r662yjd5r-wpengine.netdna-ssl.com/wp-content/uploads/2019/12/leah.gif",
+      "twitter": "@NamugerwaLeah"
+    },
+    {
+      "id": 7,
+      "name": "Lauren Howland",
+      "fromUSA": true,
+      "born": 1999,
+      "bio": "Twenty-one-year old Lauren Howland is one of the Standing Rock activists. She is from Dulce, New Mexico, which is on the Jicarilla Apache Reservation, but the tribe she is affiliated with is San Carlos Apache Nation, she is also half Navajo. The mission of the International Indigenous Youth Council is to help fight back against environmental racism.  Howland’s wrist was broken by a National Guardsman’s baton on October 22, 2016. She and other Water Protectors were attempting to reach pipeline construction sites when they were corralled by law enforcement.",
+      "quote": "We are made up of water, we are born in water, we come from water. Water is an essence of our being. We are water. That's what water means to us: it means life, it means unity, it means one people, it means all these things because we're all connected, because of water.",
+      "pictureUrl": "https://washingtonspectator.org/wp-content/uploads/2017/02/madeline_cottingham004.jpg",
+      "twitter": " "
+    },
+    {
+      "id":8,
+      "name": "Alexandria Villaseñor",
+      "fromUSA": true,
+      "born": 2005,
+      "bio": "At 14 years old, Alexandria Villaseñor has already made a name for herself as a teenage environmentalist. Dedicated to climate activism, the teen is best known for her individual protests outside the U.N. on Fridays, when she skips school to sit on a park bench outside the building. Her strike began as a sign of solidarity with Greta Thunberg’s call for school strikes in Europe. Villaseñor is also involved with the U.S. Youth Climate Strike and is the founder of Earth Uprising, an organization dedicated to fighting climate change.",
+      "quote": "Two years ago I began to research the connection between climate change and wildfires and learned that wildfires are burning longer and hotter because of climate change. I also saw Greta’s COP24 speech, and I thought that world leaders would take action to reduce greenhouse gas emissions. When they didn't, I was upset, and it was on the last day of COP24, December 14, that I began my strike at the U.N.",
+      "pictureUrl": "https://www.abc.net.au/news/image/11556402-3x2-940x627.jpg",
+      "twitter": "@AlexandriaV2005"
+    }
+  ]
+}
