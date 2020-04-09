@@ -10,15 +10,71 @@ import {withRouter} from 'react-router-dom'
 class App extends React.Component {
 
   state = {
+
+    user: {
+      id: 0,
+      username: "",
+      cheesecakes: []
+    }
+
   }
 
   handleLoginSubmit = (userInfo) => {
     console.log("Login form has been submitted")
+
+    fetch("http://localhost:4000/login", {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(userInfo)
+    })
+      .then(r => r.json())
+      .then(this.handleResponse)
   }
+
 
   handleRegisterSubmit = (userInfo) => {
     console.log("Register form has been submitted")
+
+    fetch("http://localhost:4000/users", {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(userInfo)
+    })
+      .then(r => r.json())
+      .then(this.handleResponse)
+
+
   }
+
+
+
+
+  handleResponse = (resp) => {
+    if (!resp.message) {
+
+      this.setState({
+        user: resp
+      }, () => {
+        this.props.history.push("/profile")
+      })
+
+    }
+    else {
+      alert(resp.message)
+    }
+
+  }
+
+
+
+
+
+
+
 
   renderForm = (routerProps) => {
     if(routerProps.location.pathname === "/login"){
@@ -28,11 +84,18 @@ class App extends React.Component {
     }
   }
 
+
+
+
+
+
+
   renderProfile = (routerProps) => {
-    return <ProfileContainer/>
+    return <ProfileContainer user={this.state.user}/>
   }
 
   render(){
+    console.log(this.props);
     return (
       <div className="App">
         <NavBar/>
@@ -49,7 +112,7 @@ class App extends React.Component {
 
 }
 
-export default App
+export default withRouter(App)
 
 
 
