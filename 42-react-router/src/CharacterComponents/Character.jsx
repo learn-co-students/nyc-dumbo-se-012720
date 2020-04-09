@@ -7,7 +7,7 @@ export default class extends React.Component {
     return (
        <article>
         <h2>{name}</h2>
-        <img src={gif } alt={ name } />
+        <img src={ gif } alt={ name } />
        </article>
     );
   }
