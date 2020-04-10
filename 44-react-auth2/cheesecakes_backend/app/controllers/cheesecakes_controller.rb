@@ -1,0 +1,2 @@
+class CheesecakesController < ApplicationController
+end
