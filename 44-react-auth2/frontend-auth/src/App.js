@@ -5,7 +5,9 @@ import NavBar from './components/NavBar'
 import Home from './components/Home'
 import ProfileContainer from './ProfileComponents/ProfileContainer'
 
-import {withRouter} from 'react-router-dom'
+import {withRouter, Redirect} from 'react-router-dom'
+
+
 
 class App extends React.Component {
 
@@ -15,8 +17,25 @@ class App extends React.Component {
       id: 0,
       username: "",
       cheesecakes: []
-    }
+    },
+    token: ""
+  }
 
+  componentDidMount(){
+
+    if (localStorage.token) {
+
+      fetch("http://localhost:4000/persist", {
+        headers: {
+          "Authorization": `bearer ${localStorage.token}`
+        }
+      })
+      .then(r => r.json())
+      .then(this.handleResponse)
+
+
+
+    }
   }
 
   handleLoginSubmit = (userInfo) => {
@@ -46,33 +65,39 @@ class App extends React.Component {
     })
       .then(r => r.json())
       .then(this.handleResponse)
-
-
   }
 
-
+  logSomeonOut = () => {
+    this.setState({
+      user: {
+        id: 0,
+        username: "",
+        cheesecakes: []
+      },
+      token: ""
+    })
+    localStorage.clear()
+  }
 
 
   handleResponse = (resp) => {
     if (!resp.message) {
+      localStorage.token = resp.token
+
+
 
       this.setState({
-        user: resp
+        user: resp.user,
+        token: resp.token
       }, () => {
         this.props.history.push("/profile")
       })
-
     }
     else {
       alert(resp.message)
     }
 
   }
-
-
-
-
-
 
 
 
@@ -86,16 +111,34 @@ class App extends React.Component {
 
 
 
-
-
-
-
   renderProfile = (routerProps) => {
-    return <ProfileContainer user={this.state.user}/>
+
+    if (this.state.token) {
+      return <ProfileContainer
+        user={this.state.user}
+        token={this.state.token}
+        addOneCheesecake={this.addOneCheesecake}
+      />
+    } else {
+      return <Redirect to="/login"/>
+    }
+  }
+
+
+  addOneCheesecake = (newCheesecake) => {
+
+    let copy = [...this.state.user.cheesecakes, newCheesecake]
+
+    this.setState({
+      user: {
+        ...this.state.user,
+        cheesecakes: copy
+      }
+    })
+
   }
 
   render(){
-    console.log(this.props);
     return (
       <div className="App">
         <NavBar/>

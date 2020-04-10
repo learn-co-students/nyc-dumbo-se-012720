@@ -8,6 +8,27 @@ class NewSnackForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+
+
+
+    fetch("http://localhost:4000/cheesecakes", {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `bearer ${this.props.token}`
+      },
+      body: JSON.stringify(this.state)
+    })
+      .then(r => r.json())
+      .then((newlyCreatedCheesecake) => {
+        this.props.addOneCheesecake(newlyCreatedCheesecake)
+        this.setState({
+          name: ""
+        })
+      })
+
+
+
   }
 
   handleChange = (e) => {
