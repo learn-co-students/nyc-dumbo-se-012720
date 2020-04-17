@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   resources :user_chips
   resources :chips
-  resources :burgers, only: [:index]
   post '/orders', to: 'orders#create'
   post '/users/history', to: 'users#history'
 

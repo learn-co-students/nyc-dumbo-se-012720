@@ -16,7 +16,20 @@ class ChipForm extends Component {
 
  handleSubmit = (e) => {
    e.preventDefault()
-   this.props.addOneChip(this.state)
+
+   fetch("http://localhost:4000/chips", {
+     method: "POST",
+     headers: {
+       "content-type": "application/json"
+     },
+     body: JSON.stringify(this.state)
+   })
+   .then(r => r.json())
+   .then((newlyCreatedChip) => {
+     this.props.addOneChip(newlyCreatedChip)
+   })
+
+
  }
 
  render() {

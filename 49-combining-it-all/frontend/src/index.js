@@ -2,29 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import chipsArray from './chips'
 
 // redux dependencies
-import { createStore } from 'redux'
+import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
 
 
-let initialState = {
+let chipInitialState = {
   // Change the key-value pairs here
-  chips: chipsArray,
-  hello: "From inside the state"
+  chips: []
 }
 
-
-
-
-
-
-
-// whatever gets returned from the reducer BECOMES the global state
-let theReducer = (state = initialState, action) => {
+// whatever gets returned from the reducer BECOMES the state
+let chipReducer = (state = chipInitialState, action) => {
 
   switch (action.type) {
+
+    case "SET_ALL_CHIPS":
+
+      let theArrayOfChips = action.payload
+      return {
+        ...state,
+        chips: theArrayOfChips
+      }
+
 
     case "ADD_ONE_CHIP":
 
@@ -63,7 +64,35 @@ let theReducer = (state = initialState, action) => {
 
 
 
-let storeObject = createStore(theReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+let userInitialState = {
+  id: 0,
+  token: "",
+  username: "",
+  user_chips: [],
+}
+
+let userReducer = (state = userInitialState, action) => {
+
+  switch (action.type) {
+    default:
+      return state
+  }
+
+}
+
+
+// if an action gets dispatched, that action will be ran through all of the reducers
+let rootReducer = combineReducers({
+  chipInformation: chipReducer,
+  userInformation: userReducer,
+  // any other reducers will go here
+})
+
+
+
+
+
+let storeObject = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 
 
